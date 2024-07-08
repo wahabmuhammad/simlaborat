@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_t', function (Blueprint $table) {
-            $table->id();
+        Schema::create('pasienDaftar_t', function (Blueprint $table) {
+            $table->integer('noreg')->primary();
             $table->boolean('statusenabled')->default(true);
-            $table->string('username');
-            $table->string('password');
-            $table->string('role')->default('user');
-            $table->integer('pegawai_fk');
-            $table->rememberToken();
+            $table->integer('norm_fk');
+            $table->date('tgl_masuk');
+            $table->date('tgl_pulang');
+            $table->string('jenis_penjamin');
+            $table->integer('user_fk');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_t');
+        Schema::dropIfExists('pasienDaftar_t');
     }
 };
