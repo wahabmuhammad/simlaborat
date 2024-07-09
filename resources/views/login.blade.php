@@ -10,7 +10,7 @@
         @vite('resources/css/app.css')
     </head>
     <body class="bg-slate-100 h-screen flex items-center justify-center antialiased">
-        <main class="bg-white rounded-xl w-4/12 h-4/6 shadow-md">
+        <main class="bg-white rounded-xl w-[52vh] h-[62vh] shadow-md">
             {{-- Sementara aja diubah sik --}}
             {{-- ubah warna gpp sih, bg-[warna]-[intensitas] --}}
             {{-- referensi https://tailwindcss.com/docs/customizing-colors --}}
@@ -18,7 +18,7 @@
 
                 <legend class="text-3xl self-center font-bold tracking-wide w-full text-center">Login page</legend>
 
-                <div class="flex flex-col self-center gap-7">
+                <div class="flex flex-row flex-wrap self-center gap-7">
 
                     <div class="flex flex-row w-full h-20 flex-wrap">
                         <label for="username" class="capitalize text-slate-600 font-semibold tracking-wide">username</label>
