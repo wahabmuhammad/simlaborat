@@ -28,7 +28,7 @@ class authController extends Controller
                 return redirect('/dashboard');
             };
         }else{
-            return redirect('/')->withErrors('NIP atau Password tidak sesuai')->withInput();
+            return redirect('/')->withErrors('Username atau Password tidak sesuai')->withInput();
         }
     }
 }
