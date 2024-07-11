@@ -1,39 +1,38 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <x-head-element />
 
-    <title>Welcome</title>
 
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    @vite('resources/css/app.css')
 </head>
 
 
 <body class="bg-slate-100 h-screen flex items-center justify-center antialiased">
-    <main class="bg-white rounded-xl w-[52vh] h-[62vh] shadow-md">
+
+
+    <main class="bg-white rounded-xl w-[52vh] h-[67vh] shadow-md">
+
         {{-- Sementara aja diubah sik --}}
         {{-- ubah warna gpp sih, bg-[warna]-[intensitas] --}}
         {{-- referensi https://tailwindcss.com/docs/customizing-colors --}}
 
         {{-- validasi jika error saat input --}}
-        @if ($errors->any())
-            <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-light-800 dark:text-red-400"
-                role="alert">
-                <ul>
-                    @foreach ($errors->all() as $item)
-                        <li>{{ $item }}</li>
-                    @endforeach
-                </ul>
+
+
+        <form action="{{ route('prosesLogin') }}" class="flex flex-col gap-10 px-10 py-10 h-full place-content-center" method="post">
+            @if ($errors->any())
+                <div class="text-sm text-red-800 w-full rounded-sm bg-red-100 px-2 py-3 h-fit dark:bg-light-800 dark:text-red-400" role="alert">
+                    <ul>
+                        @foreach ($errors->all() as $item)
+                            <li>{{ $item }}</li>
+                        @endforeach
+                    </ul>
                 {{-- <span class="font-medium">Danger alert!</span> Change a few things up and try submitting again. --}}
-            </div>
-        @endif
-        
-        <form action="{{ route('prosesLogin') }}" class="flex flex-row flex-wrap px-10 py-10 h-full" method="post">
+                </div>
+            @endif
             @csrf
-            <legend class="text-3xl self-center font-bold tracking-wide w-full text-center">Login page</legend>
+
+            <legend class="text-3xl self-center font-bold tracking-widew-full text-center">Login page</legend>
 
             <div class="flex flex-row flex-wrap self-center gap-7">
 
@@ -55,7 +54,7 @@
 
             </div>
 
-            <div class="flex flex-grow flex-col justify-center">
+            <div class="flex flex-col justify-center">
                 <button type="submit"
                     class="py-3 px-7 w-fit self-center bg-slate-800 text-lg font-bold tracking-wide text-slate-200 rounded-md hover:bg-slate-700">Log
                     in</button>

@@ -8,7 +8,6 @@
         <x-dashboard-navigation />
 
         <main class="flex-grow">
-
             <header class="flex flex-wrap h-16 w-full bg-slate-50 shadow-md">
                 <time datetime="" class="px-4 flex-grow block content-center">
                     <span class="font-semibold tracking-wide">7 Juni 2024</span>
@@ -18,36 +17,15 @@
                 </div>
             </header>
 
-            <section class="mx-10">
-                <div class="mt-10 w-full">
-                    <div class="flex gap-10">
-                        {{-- Component breakpoint --}}
-                        <div class="bg-slate-50 shadow-md rounded-md px-7 py-2 h-32 w-72 content-center">
-                            <h2 class="font-bold tracking-wide capitalize">Pasien Terdaftar Hari ini</h2>
-                            <p class="inline-block text-slate-700">
-                                <span>1</span>
-                                <span class="inline-block ml-2">Pasien</span>
-                            </p>
-                        </div>
-                        {{-- Component end --}}
-                        <div class="bg-slate-50 shadow-md rounded-md px-5 h-32 w-56 content-center">
-                            <h2 class="font-bold tracking-wide capitalize">Pemeriksaan Hari ini</h2>
-                            <p class="inline-block text-slate-700">
-                                <span>1</span>
-                                <span class="inline-block ml-2">Pemeriksaan</span>
-                            </p>
-                        </div>
-                        <div class="bg-slate-50 shadow-md rounded-md px-5 h-32 w-56 content-center">
-                            <h2 class="font-bold tracking-wide capitalize">Transaksi Hari ini</h2>
-                            <p class="inline-block text-slate-700">
-                                <span>1</span>
-                                <span class="inline-block ml-2">Trasaksi</span>
-                            </p>
-                        </div>
+            <div class="mt-5 mx-10">
+                <form action="" method="get" class="h-32 bg-slate-50 rounded-md shadow-md w-full p-4">
+                    <div class="flex flex-col gap-4 w-max">
+                        <label for="nama" class="text-xl w-24">nama</label>
+                        <input placeholder="" type="text" id="nama" class="border-b-4 border-slate-500 bg-slate-50 flex-grow h-8 px-2 outline-none mt-2 w-full">
                     </div>
-                </div>
+                </form>
 
-                <table class="table-fixed w-full border-collapse mt-5">
+                <table class="table-fixed w-full border-collapse">
                     <thead class="text-slate-800">
                         {{-- <caption class="caption-top text-left text-4xl font-bold uppercase tracking-wider my-3">
                             Pasien Hari Ini
@@ -96,9 +74,7 @@
                         </tr>
                     </tbody>
                 </table>
-
-            </section>
+            </div>
         </main>
-
     </body>
 </html>
