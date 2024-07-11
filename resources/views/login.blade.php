@@ -43,11 +43,8 @@
                 </div>
 
                 <div class="flex flex-row flex-wrap w-full h-20">
-                    <label for="password"
-                        class="self-baseline flex-grow capitalize text-slate-600 font-semibold tracking-wide">password</label>
-                    <a href=""
-                        class="self-baseline inline-block flex-grow text-right capitalize text-slate-500 ">forgot
-                        password</a>
+                    <label for="password" class="self-baseline flex-grow capitalize text-slate-600 font-semibold tracking-wide">password</label>
+                    <a href="" class="self-baseline inline-block flex-grow text-right capitalize text-slate-500 ">forgot password</a>
                     <input type="password" name="password" id="password" placeholder="Password"
                         class="bg-slate-100 flex-grow h-11 px-2 outline-none rounded-md mt-2 w-full @error('password') border border-red-500 @enderror">
                 </div>
