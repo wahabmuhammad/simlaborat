@@ -5,6 +5,10 @@
         <li><span class="w-4 inline-block mr-4 mt-2">&#9783;</span><a href="#">Pemeriksaan</a></li>
         <li><span class="w-4 inline-block mr-4 mt-2">&#9993;</span><a href="#">Riwayat</a></li>
     </ul>
-    <a href="#" class="capitalize">log out</a>
+    <form action="{{route('logout')}}" method="POST">
+        @csrf
+        <button type="submit" class="text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Log Out</button>
+        {{-- <a href="{{route('logout')}}" class="capitalize">log out</a> --}}
+    </form>
 </nav>
 {{--  The whole future lies in uncertainty: live immediately. - Seneca  --}}

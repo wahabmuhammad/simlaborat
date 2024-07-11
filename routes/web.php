@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [authController::class, 'index'])->name('login.index');
 Route::post('/proseslogin', [authController::class, 'prosesLogin'])->name('prosesLogin');
 Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard.index');
+Route::post('/logout', [authController::class, 'logout'])->name('logout');
 
 Route::get('/pendaftaran', function () {
     return view('pendaftaran');
