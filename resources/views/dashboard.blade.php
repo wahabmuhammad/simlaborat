@@ -3,7 +3,7 @@
 
 <x-head-element />
 
-<body class="bg-slate-100 flex">
+<body class="bg-slate-100 flex h-screen">
 
     <x-dashboard-navigation />
 

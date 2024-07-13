@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -23,6 +24,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'pegawai_id'
     ];
 
     /**
@@ -45,8 +47,8 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function pegawai(): HasOne
+    public function pegawai(): BelongsTo
     {
-        return $this->hasOne(pegawai::class, 'id', 'pegawai_fk');
+        return $this->belongsTo(pegawai::class);
     }
 }
