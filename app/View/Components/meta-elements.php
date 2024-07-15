@@ -1,11 +1,12 @@
 <?php
+
 namespace App\View\Components;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class dashboard_navigation extends Component
+class meta_elements extends Component
 {
     /**
      * Create a new component instance.
@@ -20,6 +21,6 @@ class dashboard_navigation extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.dashboard-navigation');
+        return view('components.meta-elements');
     }
 }
