@@ -11,10 +11,10 @@
 
         <header class="flex flex-wrap h-16 w-full bg-slate-50 shadow-md">
             <time datetime="" class="px-4 flex-grow block content-center">
-                <span class="font-semibold tracking-wide">7 Juni 2024</span>
+                <span class="font-semibold tracking-wide" id="today">7 Juni 2024</span>
             </time>
             <div class="block content-center px-4">
-                <span class="inline-block font-semibold tracking-wide">User</span>
+                <span class="inline-block font-semibold tracking-wide">{{Auth::user()->pegawai->namapegawai}}</span>
             </div>
         </header>
 
@@ -41,7 +41,7 @@
                         <h2 class="font-bold tracking-wide capitalize">Transaksi Hari ini</h2>
                         <p class="inline-block text-slate-700">
                             <span>1</span>
-                            <span class="inline-block ml-2">Trasaksi</span>
+                            <span class="inline-block ml-2">Transaksi</span>
                         </p>
                     </div>
                 </div>
@@ -102,5 +102,19 @@
     </main>
 
 </body>
+
+<script>
+      // Function untuk format tanggal ke "d MMMM yyyy"
+        function formatDate(date) {
+            const options = { day: 'numeric', month: 'long', year: 'numeric' };
+            return date.toLocaleDateString('id-ID', options);
+        }
+
+        // ambil tanggal hari ini
+        const today = new Date();
+        
+        // Set tanggal sesuai format function
+        document.getElementById('today').textContent = formatDate(today);
+</script>
 
 </html>
