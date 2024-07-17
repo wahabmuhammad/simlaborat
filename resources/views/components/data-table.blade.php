@@ -1,7 +1,7 @@
-<main class="pt-20 h-[1280px] w-screen lg:pt-0 lg:pl-64">
+<div>
     <div>
         <section class="p-4">
-            <h1 class="text-gray-800 text-2xl font-bold tracking-wide capitalize">Daftar Pasien</h1>
+            <h1 class="text-gray-800 text-2xl font-bold tracking-wide capitalize">{{$title}}</h1>
 
             <div class="flex flex-wrap mt-2 gap-4">
                 <div class="py-1 px-2 bg-gray-100 rounded-md drop-shadow-md">
@@ -21,4 +21,4 @@
     </div>
 
     {{ $slot }}
-</main>
+</div>

@@ -11,212 +11,42 @@
     <x-slot:body>
         <x-dashboard-navigation />
 
-    <main class="flex-grow">
-        <header class="flex flex-wrap h-16 w-full bg-slate-50 shadow-md">
-            <time datetime="" class="px-4 flex-grow block content-center">
-                <span class="font-semibold tracking-wide">7 Juni 2024</span>
-            </time>
-            <div class="block content-center px-4">
-                <span class="inline-block font-semibold tracking-wide">User</span>
+        <x-dashboard-content className="pt-20 h-fit w-screen lg:pt-0 lg:pl-64 lg:py-2">
+            <div class="lg:px-10 lg:pt-5">
+                <div class="p-4">
+                    <h1 class="text-gray-800 text-2xl font-bold tracking-wide capitalize">Pendaftaran Pasien</h1>
+
+                    <form action="POST" class="grid grid-cols-1 p-3 mt-2 gap-1 bg-gray-100 w-full rounded-md shadow-sm">
+                        <div class="flex flex-col">
+                            <label for="nama-pasien" class="block min-w-9 font-medium flex-grow capitalize">Nama Pasien</label>
+                            <input type="text" name="" id="nama-pasien" class="mt-1 block border border-gray-400 rounded-sm px-1 outline-none focus:outline-2 focus:outline-gray-500">
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="flex flex-col">
+                                <label for="nama-pasien" class="block min-w-9 font-medium flex-grow capitalize">Tempat Lahir</label>
+                                <input type="text" name="" id="nama-pasien" class="mt-1 block border border-gray-400 rounded-sm px-1 outline-none focus:outline-2 focus:outline-gray-500">
+                            </div>
+                            <div class="flex flex-col">
+                                <label for="nama-pasien" class="block min-w-9 font-medium flex-grow capitalize">tanggal lahir</label>
+                                <input type="date" name="" id="nama-pasien" class="mt-1 block border border-gray-400 rounded-sm px-1 outline-none focus:outline-2 focus:outline-gray-500">
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <label for="nama-pasien" class="block min-w-9 font-medium flex-grow capitalize">Alamat</label>
+                            <input type="text" name="" id="nama-pasien" class="mt-1 block border border-gray-400 rounded-sm px-1 outline-none focus:outline-2 focus:outline-gray-500">
+                        </div>
+                        <div class="mt-4">
+                            <button type="submit" class="bg-gray-800 text-gray-300 py-1 px-3 rounded-md font-medium tracking-wide">Submit</button>
+                        </div>
+                    </form>
+                </div>
+
+                <x-data-table title="Daftar Pasien">
+                    <x-data-lister />
+                </x-data-table>
             </div>
-        </header>
 
-        <section class="mt-5 mx-10">
-            <form action="" method="get"
-                class="grid grid-rows-3 grid-cols-4 grid-flow-row-dense gap-x-5 gap-y-2  bg-slate-50 rounded-md shadow-md w-full px-7 py-6">
+        </x-dashboard-content>
 
-                <div class="w-full col-span-2">
-                    <label for="nik" class="text-sm w-24">NIK</label>
-                    <br>
-                    <input placeholder="" type="text" id="nik"
-                        class="border-2 border-slate-800 rounded-sm bg-slate-100 flex-grow h-8 px-2 outline-none mt-2 w-full">
-                </div>
-
-                <div class="w-full col-span-2">
-                    <label for="nama" class="text-sm w-24">Nama Pasien</label>
-                    <br>
-                    <input placeholder="" type="text" id="nama"
-                        class="border-2 border-slate-800 rounded-sm bg-slate-100 flex-grow h-8 px-2 outline-none mt-2 w-full">
-                </div>
-
-                <div class="w-full col-span-2 gap-5 flex flex-wrap">
-                    <div class="w-48">
-                        <label for="tmp-lahir" class="text-sm h-min">Tempat Lahir</label>
-                        <br>
-                        <input placeholder="" type="text" id="tmp-lahir"
-                            class="border-2 border-slate-800 rounded-sm bg-slate-100 flex-grow h-8 px-2 outline-none mt-2 w-full">
-                    </div>
-
-                    <div class="flex-grow">
-                        <label for="tgl-lahir" class="text-sm w-24">Tanggal Lahir</label>
-                        <br>
-                        <input placeholder="" type="date" id="tgl-lahir"
-                            class="border-2 border-slate-800 rounded-sm bg-slate-100 flex-grow h-8 px-2 outline-none mt-2 w-full">
-                    </div>
-                </div>
-
-                <div class="w-full col-span-2">
-                    <label for="notel" class="text-sm w-24">No Telfon</label>
-                    <br>
-                    <input placeholder="" type="number" id="notel"
-                        class="border-2 border-slate-800 rounded-sm bg-slate-100 flex-grow h-8 px-2 outline-none mt-2 w-full">
-                </div>
-
-                <div class="w-full col-span-2">
-                    <label for="alamat" class="text-sm w-24">Alamat</label>
-                    <br>
-                    <input placeholder="" type="text" id="alamat"
-                        class="border-2 border-slate-800 rounded-sm bg-slate-100 flex-grow h-8 px-2 outline-none mt-2 w-full">
-                </div>
-
-                <div class="w-full col-span-2 content-end">
-                    <button type="submit" class="px-3 h-8 rounded-md bg-slate-800 text-slate-100">Submit</button>
-                </div>
-            </form>
-
-            <div class="w-full h-[54vh] mt-5 overflow-scroll">
-                <table class="w-full table-fixed border-collapse">
-                    <thead class="text-slate-800">
-                        {{-- <caption class="caption-top text-left text-4xl font-bold uppercase tracking-wider my-3">
-                                Pasien Hari Ini
-                            </caption> --}}
-                        <tr
-                            class="h-16 text-xl capitalize text-slate-800 font-bold tracking-wider border-b-4 border-slate-800">
-                            <th class="w-16">no</th>
-                            <th class="">nama</th>
-                            <th class="w-52">tanggal</th>
-                            <th class="w-40">pemeriksaan</th>
-                            <th class="w-40">pembayaran</th>
-                            <th class="w-36">edit</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-xl">
-                        {{-- component breakpoint --}}
-                        <tr class="h-14 border-b-2 border-slate-300">
-                            <td class="text-center">1</td>
-                            <td class="items-baseline">
-                                <span class="block ml-10">Lorem ipsum dolor</span>
-                            </td>
-                            <td class="text-center">22/06/2024</td>
-                            <td class="text-center">selesai</td>
-                            <td class="text-center">selesai</td>
-                            <td class="text-center">Edit</td>
-                        </tr>
-                        {{-- end --}}
-                        <tr class="h-14 border-b-2 border-slate-300">
-                            <td class="text-center">2</td>
-                            <td class="items-baseline">
-                                <span class="block ml-10">Lorem ipsum dolor</span>
-                            </td>
-                            <td class="text-center">22/06/2024</td>
-                            <td class="text-center">selesai</td>
-                            <td class="text-center">selesai</td>
-                            <td class="text-center">Edit</td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-slate-300">
-                            <td class="text-center">3</td>
-                            <td class="items-baseline">
-                                <span class="block ml-10">Lorem ipsum dolor</span>
-                            </td>
-                            <td class="text-center">22/06/2024</td>
-                            <td class="text-center">selesai</td>
-                            <td class="text-center">selesai</td>
-                            <td class="text-center">Edit</td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-slate-300">
-                            <td class="text-center">3</td>
-                            <td class="items-baseline">
-                                <span class="block ml-10">Lorem ipsum dolor</span>
-                            </td>
-                            <td class="text-center">22/06/2024</td>
-                            <td class="text-center">selesai</td>
-                            <td class="text-center">selesai</td>
-                            <td class="text-center">Edit</td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-slate-300">
-                            <td class="text-center">3</td>
-                            <td class="items-baseline">
-                                <span class="block ml-10">Lorem ipsum dolor</span>
-                            </td>
-                            <td class="text-center">22/06/2024</td>
-                            <td class="text-center">selesai</td>
-                            <td class="text-center">selesai</td>
-                            <td class="text-center">Edit</td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-slate-300">
-                            <td class="text-center">3</td>
-                            <td class="items-baseline">
-                                <span class="block ml-10">Lorem ipsum dolor</span>
-                            </td>
-                            <td class="text-center">22/06/2024</td>
-                            <td class="text-center">selesai</td>
-                            <td class="text-center">selesai</td>
-                            <td class="text-center">Edit</td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-slate-300">
-                            <td class="text-center">3</td>
-                            <td class="items-baseline">
-                                <span class="block ml-10">Lorem ipsum dolor</span>
-                            </td>
-                            <td class="text-center">22/06/2024</td>
-                            <td class="text-center">selesai</td>
-                            <td class="text-center">selesai</td>
-                            <td class="text-center">Edit</td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-slate-300">
-                            <td class="text-center">3</td>
-                            <td class="items-baseline">
-                                <span class="block ml-10">Lorem ipsum dolor</span>
-                            </td>
-                            <td class="text-center">22/06/2024</td>
-                            <td class="text-center">selesai</td>
-                            <td class="text-center">selesai</td>
-                            <td class="text-center">Edit</td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-slate-300">
-                            <td class="text-center">3</td>
-                            <td class="items-baseline">
-                                <span class="block ml-10">Lorem ipsum dolor</span>
-                            </td>
-                            <td class="text-center">22/06/2024</td>
-                            <td class="text-center">selesai</td>
-                            <td class="text-center">selesai</td>
-                            <td class="text-center">Edit</td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-slate-300">
-                            <td class="text-center">3</td>
-                            <td class="items-baseline">
-                                <span class="block ml-10">Lorem ipsum dolor</span>
-                            </td>
-                            <td class="text-center">22/06/2024</td>
-                            <td class="text-center">selesai</td>
-                            <td class="text-center">selesai</td>
-                            <td class="text-center">Edit</td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-slate-300">
-                            <td class="text-center">3</td>
-                            <td class="items-baseline">
-                                <span class="block ml-10">Lorem ipsum dolor</span>
-                            </td>
-                            <td class="text-center">22/06/2024</td>
-                            <td class="text-center">selesai</td>
-                            <td class="text-center">selesai</td>
-                            <td class="text-center">Edit</td>
-                        </tr>
-                        <tr class="h-14 border-b-2 border-slate-300">
-                            <td class="text-center">3</td>
-                            <td class="items-baseline">
-                                <span class="block ml-10">Lorem ipsum dolor</span>
-                            </td>
-                            <td class="text-center">22/06/2024</td>
-                            <td class="text-center">selesai</td>
-                            <td class="text-center">selesai</td>
-                            <td class="text-center">Edit</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-    </main>
     </x-slot:body>
 </x-html-container>

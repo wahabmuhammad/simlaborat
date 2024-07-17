@@ -1,4 +1,4 @@
-<x-html-container bodyStyle="bg-gray-300">
+<x-html-container className="bg-gray-300">
 
     <x-slot:head>
         <x-meta-elements />
@@ -10,10 +10,13 @@
     <x-slot:body>
         <x-dashboard-navigation />
 
+        <x-dashboard-content className="pt-20 h-fit w-screen lg:pt-0 lg:pl-64">
+            <x-data-table>
+                <x-data-lister />
+            </x-data-table>
+        </x-dashboard-content>
 
-        <x-data-table>
-            <x-data-lister />
-        </x-data-table>
+
     </x-slot:body>
 
 </x-html-container>

@@ -6,17 +6,15 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class htmlContainer extends Component
+class dashboardContent extends Component
 {
     /**
      * Create a new component instance.
      */
     public function __construct(
-        public string $className = "bg-gray-300",
-        public string $bodyClass = ""
+        public string $className = "pt-20 h-fit w-screen lg:pt-0 lg:pl-64",
     )
     {
-        $bodyClass = $className;
     }
 
     /**
@@ -24,6 +22,6 @@ class htmlContainer extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.html-container');
+        return view('components.dashboard-content');
     }
 }

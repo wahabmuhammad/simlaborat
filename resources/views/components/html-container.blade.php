@@ -6,7 +6,8 @@
         {{$head}}
     </head>
 
-    <body class="{{$bodyStyle}}">
+    <body class="hidden {{$bodyClass}}">
+        <script>0</script>
         {{$body}}
     </body>
 </html>
