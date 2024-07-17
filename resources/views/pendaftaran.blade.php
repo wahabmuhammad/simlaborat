@@ -15,7 +15,7 @@
             <div class="p-4">
                 <h1 class="text-gray-800 text-2xl font-bold tracking-wide capitalize">Pendaftaran Pasien</h1>
 
-                <form action="POST" class="grid grid-cols-1 p-3 mt-2 gap-1 bg-gray-100 w-full rounded-md shadow-sm">
+                <form action="POST" class="grid grid-cols-1 p-3 mt-2 gap-1 bg-gray-100 w-full rounded-md shadow-sm lg:px-6 lg:py-5">
                     <div class="flex flex-col">
                         <label for="nama-pasien" class="block min-w-9 font-medium flex-grow capitalize">Nama Pasien</label>
                         <input type="text" name="" id="nama-pasien" class="mt-1 block border border-gray-400 rounded-sm px-1 outline-none focus:outline-2 focus:outline-gray-500">
