@@ -1,17 +1,57 @@
-<nav class="flex flex-col h-full flex-wrap gap-10 bg-slate-800 flex-shrink w-62 text-slate-100 p-5">
-    <a href="{{route('dashboard.index')}}">
-        <h1 class="block flex-shrink font-bold tracking-wider text-4xl">Dashboard</h1>
-    </a>
-    <ul class="flex-grow text-slate-300 text-md capitalize font-semibold tracking-wide">
-        <li><span class="w-4 inline-block mr-4 mt-2">&#9998;</span><a href="{{route('pendaftaran.index')}}">Pendaftaran</a></li>
-        <li><span class="w-4 inline-block mr-4 mt-2">&#9783;</span><a href="#">Pemeriksaan</a></li>
-        <li><span class="w-4 inline-block mr-4 mt-2">&#9993;</span><a href="#">Riwayat</a></li>
-        <li><span class="w-4 inline-block mr-4 mt-2">&#9993;</span><a href="#">Laporan</a></li>
-    </ul>
-    <form action="{{route('logout')}}" method="POST">
-        @csrf
-        <button type="submit" class="text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Log Out</button>
-        {{-- <a href="{{route('logout')}}" class="capitalize">log out</a> --}}
-    </form>
+<nav class="lg:hidden w-full fixed z-10">
+    <div class="flex flex-wrap justify-stretch w-full h-20 py-2 px-4 bg-gray-50 shadow-md ">
+        <h1 class="flex-grow text-xl font-bold tracking-wide self-center">Dashboard</h1>
+        <button id="menu-button" class="p-2">
+            <img src="{{ URL::to('/') }}/images/menu.svg" alt="Menu" class="">
+        </button>
+    </div>
+
+    <section id="mobile-navigation" class="hidden flex-col py-5 bg-gray-50 shadow-md w-full">
+        <button
+            class="flex gap-3 items-center text-lg text-left px-5 py-1 font-semibold tracking-wide hover:bg-gray-200 ">
+            <img src="{{ URL::to('/') }}/images/add-person.svg" alt=""><a href="#">Pemeriksaan</a>
+        </button>
+        <button
+            class="flex gap-3 items-center text-lg text-left px-5 py-1 font-semibold tracking-wide hover:bg-gray-200 ">
+            <img src="{{ URL::to('/') }}/images/checklist.svg" alt=""><a href="#">Pendaftaran</a>
+        </button>
+        <button
+            class="flex gap-3 items-center text-lg text-left px-5 py-1 font-semibold tracking-wide hover:bg-gray-200 ">
+            <img src="{{ URL::to('/') }}/images/payment.svg" alt=""><a href="#">Pembayaran</a>
+        </button>
+        <button
+            class="flex gap-3 items-center text-lg text-left px-5 py-1 font-semibold tracking-wide hover:bg-gray-200 ">
+            <img src="{{ URL::to('/') }}/images/history.svg" alt=""><a href="#">Riwayat</a>
+        </button>
+
+        <button
+            class="flex gap-3 items-center text-lg text-left px-5 mt-10 font-semibold tracking-wide hover:bg-gray-200">
+            <img src="{{ URL::to('/') }}/images/log-out.svg" alt=""><a href="#">Log Out</a>
+        </button>
+    </section>
 </nav>
-{{--  The whole future lies in uncertainty: live immediately. - Seneca  --}}
+
+<nav class="hidden lg:flex flex-col fixed w-64 h-full pt-6 bg-gray-50">
+    <div class="flex-grow">
+        <h1 class="block w-full pl-8 text-2xl font-bold h-fit tracking-wide uppercase">Dashboard</h1>
+        <div class="flex flex-col gap-3 mt-10 ml-8">
+            <button class="flex gap-3 items-center text-xl tracking-wider text-gray-800">
+                <img src="{{ URL::to('/') }}/images/add-person.svg" alt=""> Pendaftaran
+            </button>
+            <button class="flex gap-3 items-center text-xl tracking-wider text-gray-800">
+                <img src="{{ URL::to('/') }}/images/checklist.svg" alt=""> Pemeriksaan
+            </button>
+            <button class="flex gap-3 items-center text-xl tracking-wider text-gray-800">
+                <img src="{{ URL::to('/') }}/images/payment.svg" alt=""> Pembayaran
+            </button>
+            <button class="flex gap-3 items-center text-xl tracking-wider text-gray-800">
+                <img src="{{ URL::to('/') }}/images/history.svg" alt=""> Riwayat
+            </button>
+        </div>
+    </div>
+    <button class="flex gap-3 items-center w-full text-left ml-8 mb-6 py-3">
+        <img src="{{ URL::to('/') }}/images/log-out.svg" alt=""> Log Out
+    </button>
+</nav>
+
+{{-- @vite(['resources/js/navigation/navigation.ts']) --}}

@@ -6,14 +6,12 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class htmlContainer extends Component
+class dataTable extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(
-        public string $bodyStyle = "bg-gray-300"
-    )
+    public function __construct()
     {
         //
     }
@@ -23,6 +21,6 @@ class htmlContainer extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.html-container');
+        return view('components.data-table');
     }
 }
