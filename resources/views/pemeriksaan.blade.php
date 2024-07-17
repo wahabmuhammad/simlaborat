@@ -12,7 +12,7 @@
 
 
         <x-data-table>
-            <x-data-lister :datas="$mockData" />
+            <x-data-lister />
         </x-data-table>
     </x-slot:body>
 

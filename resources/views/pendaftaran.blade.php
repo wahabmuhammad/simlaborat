@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<x-html-container>
 
-<x-head-element />
+    <x-slot:head>
+        <x-meta-elements />
 
-<body class="bg-slate-200 flex h-screen">
+        {{-- Include Js module required by navigation and data lister --}}
+        @vite(['resources/js/navigation/navigation.ts', 'resources/js/data_display/listing.ts'])
+    </x-slot:head>
 
-    <x-dashboard-navigation />
+
+    <x-slot:body>
+        <x-dashboard-navigation />
 
     <main class="flex-grow">
         <header class="flex flex-wrap h-16 w-full bg-slate-50 shadow-md">
@@ -214,6 +218,5 @@
             </div>
         </section>
     </main>
-</body>
-
-</html>
+    </x-slot:body>
+</x-html-container>
