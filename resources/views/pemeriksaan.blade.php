@@ -10,6 +10,8 @@
     <x-slot:body>
         <x-dashboard-navigation />
 
+        <x-dashboard-header />
+
         <x-dashboard-content className="pt-20 h-fit w-screen lg:pt-0 lg:pl-64">
             <x-data-table>
                 <x-data-lister />

@@ -24,14 +24,25 @@ class data extends Component
     public function __construct(
         public int $id = 1,
         public string $name = "John Doe",
-        public string $gender = "Male",
-        public string $phone = "(791) 2438547",
-        public string $inDate = "09/07/2024",
-        public string $outDate = "09/08/2024",
-        public bool $checked = true,
+        public bool $checked = false,
+        public array $lists = [
+            "Darah lengkap" => true,
+            "Darah rutin" => true,
+            "Gula sewaktu" => true,
+            "Gula puasa" => true,
+        ],
+        // public string $gender = "Male",
+        // public string $phone = "(791) 2438547",
+        // public string $inDate = "09/07/2024",
+        // public string $outDate = "09/08/2024",
+        public array $details = [
+            "Jenis Kelamin" => "Male",
+            "Nomor Telfon" => "(791) 2438547",
+            "Tanggal Masuk" => "09/07/2024",
+            "Tanggal Keluar" => "09/08/2024"
+        ],
     )
     {
-
     }
 
     /**

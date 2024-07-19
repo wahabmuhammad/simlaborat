@@ -23,17 +23,21 @@
         <ul class="grid grid-cols-1 gap-1 md:grid-cols-2 text-gray-800">
             <li class="col-span-1 order-1 border-b border-gray-400 md:hidden">
                 <div class="flex gap-2">
-                    <span class="min-w-28">Full Name</span>
+                    <span class="min-w-28">Nama Lengkap</span>
                     <span class="text-gray-900 font-normal capitalize tracking-wide">{{ $name }}</span>
                 </div>
             </li>
-            <li class="col-span-1 order-1 border-b border-gray-400">
-                <div class="flex gap-2">
-                    <span class=" w-28">Jenis Kelamin</span>
-                    <span class="text-gray-900 font-normal capitalize tracking-wide">{{ $gender }}</span>
-                </div>
-            </li>
-            <li class="col-span-1 order-3 border-b border-gray-400 md:order-2">
+
+            @foreach ( $details as $key => $data )
+
+                <li class="col-span-1 order-1 border-b border-gray-400">
+                    <div class="flex gap-2">
+                        <span class=" w-28">{{ $key }}</span>
+                        <span class="text-gray-900 font-normal capitalize tracking-wide">{{ $data }}</span>
+                    </div>
+                </li>
+            @endforeach
+            {{-- <li class="col-span-1 order-3 border-b border-gray-400 md:order-2">
                 <div class="flex gap-2">
                     <span class=" w-28">Nomor Telfon</span>
                     <span class="text-gray-900 font-normal capitalize tracking-wide">{{ $phone }}</span>
@@ -50,7 +54,7 @@
                     <span class=" w-28">Tanggal Keluar</span>
                     <span class="text-gray-900 font-normal capitalize tracking-wide">{{ $outDate }}</span>
                 </div>
-            </li>
+            </li> --}}
         </ul>
 
         <div class="mt-3">
@@ -58,7 +62,17 @@
             <h4>Daftar Pemeriksaan Dilakukan :</h4>
 
             <ul class="grid grid-cols-1 pl-5 mt-2">
+                @foreach ($lists as $key => $value )
                 <li class="col-span-1 list-decimal border-b border-gray-400">
+                    <div class="flex gap-2">
+                        <span class=" w-28">{{ $key }}</span>
+                        <span class="font-normal capitalize">{{ $value ? "Ya" : "Tidak" }}</span>
+                    </div>
+                </li>
+                @endforeach
+
+                {{-- Use this for temporary solution --}}
+                {{-- <li class="col-span-1 list-decimal border-b border-gray-400">
                     <div class="flex gap-2">
                         <span class=" w-28">Darah lengkap</span>
                         <span class="font-normal capitalize">{{ $checked }}</span>
@@ -81,7 +95,7 @@
                         <span class=" w-28">Gula puasa</span>
                         <span class="font-normal capitalize">{{ $checked }}</span>
                     </div>
-                </li>
+                </li> --}}
             </ul>
 
         </div>

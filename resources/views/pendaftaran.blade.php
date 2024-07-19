@@ -11,6 +11,8 @@
     <x-slot:body>
         <x-dashboard-navigation />
 
+        <x-dashboard-header />
+
         <x-dashboard-content className="pt-20 h-fit w-screen lg:pt-0 lg:pl-64 lg:py-2">
             <div class="p-4">
                 <h1 class="text-gray-800 text-2xl font-bold tracking-wide capitalize">Pendaftaran Pasien</h1>
