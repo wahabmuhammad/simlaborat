@@ -37,7 +37,7 @@
 
 
         <button
-            class="flex gap-3 w-full items-center text-lg text-left px-5 mt-4  tracking-wide hover:bg-gray-200 ">
+            class="flex gap-3 w-full items-center text-lg text-left px-5 mt-10  tracking-wide hover:bg-gray-200 ">
             <img src="{{ URL::to('/') }}/images/log-out.svg" alt=""><a href="#">Log Out</a>
         </button>
     </section>
@@ -64,6 +64,7 @@
             </button>
         </div>
     </div>
+
     <button class="flex gap-3 items-center w-full text-left ml-8 mb-6 py-3">
         <img src="{{ URL::to('/') }}/images/log-out.svg" alt=""> Log Out
     </button>
