@@ -48,6 +48,9 @@
         <h1 class="block w-full pl-8 text-2xl font-bold h-fit tracking-wide uppercase">Dashboard</h1>
         <div class="flex flex-col gap-3 mt-10 ml-8">
             <button class="flex gap-3 items-center text-xl tracking-wider text-gray-800">
+                <img src="{{ URL::to('/') }}/images/home.svg" alt=""> Home
+            </button>
+            <button class="flex gap-3 items-center text-xl tracking-wider text-gray-800">
                 <img src="{{ URL::to('/') }}/images/add-person.svg" alt=""> Pendaftaran
             </button>
             <button class="flex gap-3 items-center text-xl tracking-wider text-gray-800">

@@ -11,7 +11,7 @@
     <x-slot:body>
         <x-dashboard-navigation />
 
-        <x-dashboard-header />
+        <x-dashboard-header title="Pendaftaran"/>
 
         <x-dashboard-content className="pt-20 h-fit w-screen lg:pt-0 lg:pl-64 lg:py-2">
             <div class="p-4">
