@@ -23,4 +23,5 @@ Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard
 Route::post('/logout', [authController::class, 'logout'])->name('logout');
 Route::get('/pendaftaran', [pendaftaranController::class, 'index'])->name('pendaftaran.index');
 Route::get('/pemeriksaan', [pemeriksaanController::class, 'index'])->name('pemeriksaan.index');
+Route::post('/registrasi', [pendaftaranController::class, 'registrasi'])->name('registrasi.pasien');
 
