@@ -6,20 +6,15 @@ use App\Models\pegawai;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class dashboardController extends Controller
 {
     public function index(){
-        // turn off for UI update
-        # $pegawai_id = Auth::user()->pegawai_id;
-
-        // $pegawai_fk = 1;
-        // $data = User::with('pegawai')->find($pegawai_id)->get();
-
-        # $data = pegawai::where('id', $pegawai_id)->first();
-
-        // $data = User::find(Auth::user()->pegawai_id)->getRelations();
-        // dd($data);
-        return view('dashboard');
+        $dataPasien =  DB::table('pasien_t')->get();
+		$datas = $dataPasien->toArray();
+		// dd($datas);
+		// return view("pendaftaran", compact('datas'));
+        return view('dashboard', compact('datas'));
     }
 }

@@ -36,7 +36,7 @@
             </div>
 
             <x-data-table title="Daftar Pasien">
-                <x-data-lister />
+                <x-data-lister  :datas="$datas"/>
             </x-data-table>
         </x-dashboard-content>
     </x-slot:body>
