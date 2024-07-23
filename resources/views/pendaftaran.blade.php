@@ -55,7 +55,8 @@
             </div>
 
             <x-data-table title="Daftar Pasien">
-                <x-data-lister />
+                {{-- @dd($datas) --}}
+                <x-data-lister :datas="$datas" />
             </x-data-table>
 
 

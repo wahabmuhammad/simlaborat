@@ -4,6 +4,6 @@
         <span class="text-md font-light">{{ Carbon\Carbon::Now()->format('d M Y') }}</span>
     </div>
     <div class="flex items-center justify-center col-span-1">
-        <a class="text-xl font-medium tracking-wide">John Doe</a>
+        <a class="text-l font-medium tracking-wide">{{Auth::user()->pegawai->namapegawai}}</a>
     </div>
 </header>

@@ -3,14 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\pasien;
+use App\View\Components\dataLister;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class pendaftaranController extends Controller
 {
 	public function index()
 	{
-		return view("pendaftaran");
+		$dataPasien =  DB::table('pasien_t')->get();
+		$datas = $dataPasien->toArray();
+		// dd($datas);
+		return view("pendaftaran", compact('datas'));
 	}
 
 	public function registrasi(Request $request)
