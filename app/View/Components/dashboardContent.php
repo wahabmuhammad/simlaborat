@@ -12,7 +12,7 @@ class dashboardContent extends Component
      * Create a new component instance.
      */
     public function __construct(
-        public string $className = "pt-20 h-fit w-screen lg:pt-0 lg:pl-64",
+        public string $className = "pt-20 h-fit w-screen lg:pt-24 lg:pl-64",
     )
     {
     }

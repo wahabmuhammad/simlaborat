@@ -4,7 +4,7 @@
         <x-meta-elements />
 
         {{-- Include Js module required by navigation and data lister --}}
-        @vite(['resources/js/navigation/navigation.ts', 'resources/js/data_display/listing.ts'])
+        @vite(['resources/js/navigation/navigation.ts'])
     </x-slot:head>
 
     <x-slot:body>
@@ -14,9 +14,11 @@
 
         <x-dashboard-content>
 
-                <x-data-table>
-                    <x-data-lister />
-                </x-data-table>
+            <div class="p-6 lg:p-10">
+                <form class="bg-gray-50 w-full">
+
+                </form>
+            </div>
 
         </x-dashboard-content>
 

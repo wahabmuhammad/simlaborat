@@ -7,7 +7,7 @@
         @notifyCss
     </head>
 
-    <body class="hidden {{$bodyClass}}">
+    <body class="hidden bg-gray-200 {{$className}}">
         <script>0</script>
         {{$body}}
         <x-notify::notify />

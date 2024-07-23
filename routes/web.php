@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\authController;
 use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\InputPemeriksaan;
 use App\Http\Controllers\pemeriksaanController;
 use App\Http\Controllers\pendaftaranController;
 use Illuminate\Support\Facades\Route;
@@ -24,4 +25,5 @@ Route::post('/logout', [authController::class, 'logout'])->name('logout');
 Route::get('/pendaftaran', [pendaftaranController::class, 'index'])->name('pendaftaran.index');
 Route::get('/pemeriksaan', [pemeriksaanController::class, 'index'])->name('pemeriksaan.index');
 Route::post('/registrasi', [pendaftaranController::class, 'registrasi'])->name('registrasi.pasien');
+Route::get('/pemeriksaan/input-pemeriksaan', [InputPemeriksaan::class, 'index'])->name('InputPemeriksaan.index');
 

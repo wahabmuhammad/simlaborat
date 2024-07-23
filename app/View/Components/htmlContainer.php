@@ -12,8 +12,7 @@ class htmlContainer extends Component
      * Create a new component instance.
      */
     public function __construct(
-        public string $className = "bg-gray-300",
-        public string $bodyClass = ""
+        public string $className = "bg-gray-500",
     )
     {
         $bodyClass = $className;

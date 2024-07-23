@@ -7,30 +7,32 @@
     </x-slot:head>
 
     <x-slot:body>
-        <x-dashboard-navigation />
-
         <x-dashboard-header />
 
-        <x-dashboard-content className="pt-20 h-fit w-screen lg:pt-0 lg:pl-64" >
+        <x-dashboard-navigation />
 
-            <div class="grid grid-cols-1 m-5">
-                <section class="bg-gray-100 rounded-md overflow-hidden">
-                    <h1 class="bg-gray-50 block text-center p-3 shadow-sm capitalize">Hari ini</h1>
-                    <ul class="w-full p-5 grid lg:grid-cols-2 lg:gap-5">
-                        <li class="grid grid-cols-7 px-1 py-1 tracking-wide border-b border-gray-800">
-                            <span class="col-span-3">Terdaftar</span>
-                            <span class="font-medium col-span-4 text-right">1 Orang</span>
-                        </li>
-                        <li class="grid grid-cols-7 px-1 py-1 tracking-wide border-b border-gray-800">
-                            <span class="col-span-3">Diperiksa</span>
-                            <span class="font-medium col-span-4 text-right">2 Orang</span>
-                        </li>
-                        <li class="grid grid-cols-7 px-1 py-1 tracking-wide border-b border-gray-800">
-                            <span class="col-span-3">Lunas</span>
-                            <span class="font-medium col-span-4 text-right">5 Orang</span>
-                        </li>
-                    </ul>
-                </section>
+        <x-dashboard-content className="pt-20 h-fit w-screen lg:pt-24 lg:pl-64" >
+
+            <div class="p-5">
+                <div class="grid grid-cols-1 shadow-md">
+                    <section class="bg-gray-100 rounded-md overflow-hidden">
+                        <h1 class="bg-gray-50 block text-center p-3 shadow-sm capitalize">Hari ini</h1>
+                        <ul class="w-full p-5 grid lg:grid-cols-2 lg:gap-5">
+                            <li class="grid grid-cols-7 px-1 py-1 tracking-wide border-b border-gray-800">
+                                <span class="col-span-3">Terdaftar</span>
+                                <span class="font-medium col-span-4 text-right">1 Orang</span>
+                            </li>
+                            <li class="grid grid-cols-7 px-1 py-1 tracking-wide border-b border-gray-800">
+                                <span class="col-span-3">Diperiksa</span>
+                                <span class="font-medium col-span-4 text-right">2 Orang</span>
+                            </li>
+                            <li class="grid grid-cols-7 px-1 py-1 tracking-wide border-b border-gray-800">
+                                <span class="col-span-3">Lunas</span>
+                                <span class="font-medium col-span-4 text-right">5 Orang</span>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
             </div>
 
             <x-data-table title="Daftar Pasien">

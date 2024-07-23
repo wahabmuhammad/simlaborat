@@ -1,4 +1,4 @@
-<section class="data p-4 bg-gray-100 rounded-md shadow-sm">
+<section class="data p-4 bg-gray-100 rounded-md shadow-md">
     <div class="flex flex-wrap text-lg items-center font-semibold max-w-full">
         <span class="px-2">{{ $id }}</span>
         <span class="flex-grow justify-self-start max-w-36 line-clamp-1 md:max-w-none md:line-clamp-none">{{ $name }}</span>
@@ -12,7 +12,7 @@
                     <span class="inline-block text-center align-middle">Belum</span>
                 </div>
             @endif
-            <button class="p-1 rounded-md expandDetails hover:bg-gray-200">
+            <button class="expandDetails p-1 rounded-md hover:bg-gray-200">
                 <img src="{{ URL::to('/') }}/images/dot.svg" alt="">
             </button>
         </div>
@@ -37,24 +37,7 @@
                     </div>
                 </li>
             @endforeach
-            {{-- <li class="col-span-1 order-3 border-b border-gray-400 md:order-2">
-                <div class="flex gap-2">
-                    <span class=" w-28">Nomor Telfon</span>
-                    <span class="text-gray-900 font-normal capitalize tracking-wide">{{ $phone }}</span>
-                </div>
-            </li>
-            <li class="col-span-1 order-2 border-b border-gray-400 md:order-3">
-                <div class="flex gap-2">
-                    <span class=" w-28">Tanggal Masuk</span>
-                    <span class="text-gray-900 font-normal capitalize tracking-wide">{{ $inDate }}</span>
-                </div>
-            </li>
-            <li class="col-span-1 order-4 border-b border-gray-400">
-                <div class="flex gap-2">
-                    <span class=" w-28">Tanggal Keluar</span>
-                    <span class="text-gray-900 font-normal capitalize tracking-wide">{{ $outDate }}</span>
-                </div>
-            </li> --}}
+
         </ul>
 
         <div class="mt-3">
@@ -63,44 +46,30 @@
 
             <ul class="grid grid-cols-1 pl-5 mt-2">
                 @foreach ($lists as $key => $value )
-                <li class="col-span-1 list-decimal border-b border-gray-400">
+                <li class="col-span-1 list-decimal border-b border-gray-300">
                     <div class="flex gap-2">
                         <span class=" w-28">{{ $key }}</span>
                         <span class="font-normal capitalize">{{ $value ? "Ya" : "Tidak" }}</span>
                     </div>
                 </li>
                 @endforeach
-
-                {{-- Use this for temporary solution --}}
-                {{-- <li class="col-span-1 list-decimal border-b border-gray-400">
-                    <div class="flex gap-2">
-                        <span class=" w-28">Darah lengkap</span>
-                        <span class="font-normal capitalize">{{ $checked }}</span>
-                    </div>
-                </li>
-                <li class="col-span-1 list-decimal border-b border-gray-400">
-                    <div class="flex gap-2">
-                        <span class=" w-28">Darah rutin</span>
-                        <span class="font-normal capitalize">{{ $checked }}</span>
-                    </div>
-                </li>
-                <li class="col-span-1 list-decimal border-b border-gray-400">
-                    <div class="flex gap-2">
-                        <span class=" w-28">Gula sewaktu</span>
-                        <span class="font-normal capitalize">{{ $checked }}</span>
-                    </div>
-                </li>
-                <li class="col-span-1 list-decimal border-b border-gray-400">
-                    <div class="flex gap-2">
-                        <span class=" w-28">Gula puasa</span>
-                        <span class="font-normal capitalize">{{ $checked }}</span>
-                    </div>
-                </li> --}}
             </ul>
 
         </div>
-        <div class="flex flex-wrap mt-4 w-full place-content-end">
-            <button  class="bg-gray-800 text-gray-300 py-1 px-3 rounded-md font-medium tracking-wide">Edit</button>
+        <div class="flex flex-wrap mt-10 w-full place-content-end gap-3">
+            @if ($checked)
+                <button class="bg-gray-300 text-gray-800 p-1 rounded-md font-medium tracking-wide">
+                    <img src="{{ URL::to('/') }}/images/print.svg" alt="Cetak">
+                </button>
+            @endif
+            @if ($checked)
+                <button class="bg-gray-800 text-gray-300 py-1 px-3 rounded-md font-medium tracking-wide">Edit</button>
+            @else
+                <button class="bg-gray-800 text-gray-300 py-1 px-3 rounded-md font-medium tracking-wide">Periksa</button>
+            @endif
         </div>
+
+
     </div>
 </section>
+
