@@ -15,7 +15,7 @@
 
         <x-dashboard-content className="pt-20 h-fit w-screen lg:pt-0 lg:pl-64 lg:py-2">
             <div class="p-4">
-                <h1 class="text-gray-800 text-2xl font-bold tracking-wide capitalize">Pendaftaran Pasien</h1>
+                <h1 class="text-gray-800 text-2xl font-bold tracking-wide capitalize mt-20">Pendaftaran Pasien</h1>
 
                 <form action="{{ route('registrasi.pasien') }}"
                     class="grid grid-cols-1 p-3 mt-2 gap-1 bg-gray-100 w-full rounded-md shadow-sm lg:px-6 lg:py-5"

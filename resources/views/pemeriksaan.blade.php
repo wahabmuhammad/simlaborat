@@ -15,7 +15,7 @@
         <x-dashboard-content>
 
                 <x-data-table>
-                    <x-data-lister />
+                    <x-data-lister :datas="$datas"/>
                 </x-data-table>
 
         </x-dashboard-content>

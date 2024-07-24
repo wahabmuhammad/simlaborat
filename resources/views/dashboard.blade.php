@@ -20,7 +20,7 @@
                         <ul class="w-full p-5 grid lg:grid-cols-2 lg:gap-5">
                             <li class="grid grid-cols-7 px-1 py-1 tracking-wide border-b border-gray-800">
                                 <span class="col-span-3">Terdaftar</span>
-                                <span class="font-medium col-span-4 text-right">1 Orang</span>
+                                <span class="font-medium col-span-4 text-right">{{$pasienTerdaftar}} Orang</span>
                             </li>
                             <li class="grid grid-cols-7 px-1 py-1 tracking-wide border-b border-gray-800">
                                 <span class="col-span-3">Diperiksa</span>

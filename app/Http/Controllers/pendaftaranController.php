@@ -12,7 +12,7 @@ class pendaftaranController extends Controller
 {
 	public function index()
 	{
-		$dataPasien =  DB::table('pasien_t')->get();
+		$dataPasien =  DB::table('pasien_t')->where('statusenabled', '=' ,true)->get();
 		$datas = $dataPasien->toArray();
 		// dd($datas);
 		return view("pendaftaran", compact('datas'));

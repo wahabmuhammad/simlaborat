@@ -12,9 +12,10 @@ class dashboardController extends Controller
 {
     public function index(){
         $dataPasien =  DB::table('pasien_t')->get();
+        $pasienTerdaftar = $dataPasien->count();
 		$datas = $dataPasien->toArray();
-		// dd($datas);
+		// dd($pasienTerdaftar);
 		// return view("pendaftaran", compact('datas'));
-        return view('dashboard', compact('datas'));
+        return view('dashboard', compact('datas', 'pasienTerdaftar'));
     }
 }

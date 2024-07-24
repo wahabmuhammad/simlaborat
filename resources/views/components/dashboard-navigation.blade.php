@@ -1,6 +1,6 @@
 <nav class="lg:hidden w-full fixed z-20">
     <div class="flex flex-wrap justify-stretch w-full h-20 py-2 px-4 bg-gray-50 shadow-md ">
-        <h1 class="hidden flex-grow text-xl font-bold tracking-wide self-center uppercase lg:block">Dashboard</h1>
+        <h1 class="hidden flex-grow text-xl font-bold tracking-wide self-center uppercase lg:block">Atlas Medika</h1>
         <h1 class="flex-grow text-xl font-bold tracking-wide self-center uppercase lg:hidden">{{ $title }}</h1>
         <button id="menu-button" class="p-2">
             <img src="{{ URL::to('/') }}/images/menu.svg" alt="Menu" class="">
@@ -45,7 +45,7 @@
 
 <nav class="hidden lg:flex flex-col fixed w-64 h-full pt-6 bg-gray-50">
     <div class="flex-grow">
-        <h1 class="block w-full pl-8 text-2xl font-bold h-fit tracking-wide uppercase">Dashboard</h1>
+        <h1 class="block w-full pl-8 text-2xl font-bold h-fit tracking-wide uppercase">Atlas Medika</h1>
         <div class="flex flex-col gap-3 pt-10 ml-8">
             <button class="flex gap-3 items-center text-xl tracking-wider text-gray-800">
                 <img src="{{ URL::to('/') }}/images/home.svg" alt=""><a href="{{ URL::to('/dashboard')}}">Home</a>

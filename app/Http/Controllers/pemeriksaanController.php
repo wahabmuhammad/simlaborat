@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 
 class pemeriksaanController extends Controller
 {
 	public function index()
 	{
-
-		return view("pemeriksaan");
+		$dataPasien =  DB::table('pasien_t')->where('statusenabled', '=' ,true)->get();
+		$datas = $dataPasien->toArray();
+		return view("pemeriksaan", compact('datas'));
 	}
 }
