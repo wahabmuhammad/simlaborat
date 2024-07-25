@@ -23,33 +23,36 @@
                     @method('POST')
                     @csrf
                     <div class="flex flex-col">
-                        <label for="nama-pasien" class="block min-w-9 font-medium flex-grow capitalize">Nama
-                            Pasien</label>
+                        <label for="nama-pasien" class="block min-w-9 font-medium flex-grow capitalize">
+                            Nama Pasien
+                        </label>
                         <input type="text" name="namaPasien" id="nama-pasien"
-                            class="mt-1 block border border-gray-400 rounded-sm px-1 outline-none focus:outline-2 focus:outline-gray-500">
+                            class="mt-1 block border border-gray-400 rounded-sm px-1 outline-none focus:outline focus:outline-gray-600">
                     </div>
                     <div class="grid grid-cols-2 gap-2">
                         <div class="flex flex-col">
-                            <label for="nama-pasien" class="block min-w-9 font-medium flex-grow capitalize">Tempat
-                                Lahir</label>
-                            <input type="text" name="tempatLahir" id="nama-pasien"
-                                class="mt-1 block border border-gray-400 rounded-sm px-1 outline-none focus:outline-2 focus:outline-gray-500">
+                            <label for="tempat-lahir" class="block min-w-9 font-medium flex-grow capitalize">
+                                Tempat Lahir
+                            </label>
+                            <input type="text" name="tempatLahir" id="tempat-lahir"
+                                class="mt-1 block border border-gray-400 rounded-sm px-1 outline-none focus:outline focus:outline-gray-600">
                         </div>
                         <div class="flex flex-col">
-                            <label for="nama-pasien" class="block min-w-9 font-medium flex-grow capitalize">tanggal
-                                lahir</label>
-                            <input type="date" name="tanggalLahir" id="nama-pasien"
-                                class="mt-1 block border border-gray-400 rounded-sm px-1 outline-none focus:outline-2 focus:outline-gray-500">
+                            <label for="tanggal-lahir" class="block min-w-9 font-medium flex-grow capitalize">
+                                tanggal lahir
+                            </label>
+                            <input type="date" name="tanggalLahir" id="tanggal-lahir"
+                                class="mt-1 block border border-gray-400 rounded-sm px-1 outline-none focus:outline focus:outline-gray-600">
                         </div>
                     </div>
                     <div class="flex flex-col">
-                        <label for="nama-pasien" class="block min-w-9 font-medium flex-grow capitalize">Alamat</label>
-                        <input type="text" name="alamat" id="nama-pasien"
-                            class="mt-1 block border border-gray-400 rounded-sm px-1 outline-none focus:outline-2 focus:outline-gray-500">
+                        <label for="alamat" class="block min-w-9 font-medium flex-grow capitalize"> Alamat </label>
+                        <input type="text" name="alamat" id="alamat"
+                            class="mt-1 block border border-gray-400 rounded-sm px-1 outline-none focus:outline focus:outline-gray-600">
                     </div>
                     <div class="mt-4">
                         <button type="submit"
-                            class="bg-gray-800 text-gray-300 py-1 px-3 rounded-md font-medium tracking-wide">Submit</button>
+                            class="bg-gray-800 text-gray-300 py-1 px-3 rounded-md font-medium tracking-wide"> Submit </button>
                     </div>
                 </form>
             </div>

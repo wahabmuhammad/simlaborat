@@ -1,21 +1,35 @@
 
-<div class="md:p-5">
+<div id="DataTable" class="md:p-5">
 
     <section class="p-5">
         <h1 class="text-gray-800 text-2xl font-bold tracking-wide capitalize">{{$title}}</h1>
 
-        <div class="flex flex-wrap mt-2 gap-4">
-            <div class="py-1 px-2 bg-gray-100 rounded-md shadow-md">
-                <label for="tanggal" class="font-semibold text-gray-800">Tanggal</label>
-                <input type="date" class="bg-gray-100 font-ligh w-fit"
-                    value="{{ Carbon\Carbon::Now()->format('Y-m-d') }}">
+        <div class="flex flex-wrap mt-2 gap-5 md:gap-4">
+            <div class="flex flex-wrap grid-cols-5 h-10 w-full gap-3">
+                <div class=" col-span-3 py-2 px-3 bg-gray-100 rounded-md shadow-md">
+                    <label for="tanggal" class="font-semibold text-gray-800"> Tanggal </label>
+                    <input type="date" class="bg-gray-100 font-light rounded-sm w-fit outline-none focus:outline focus:outline-2 focus:outline-offset-1 focus:outline-gray-600"
+                        value="{{ Carbon\Carbon::Now()->format('Y-m-d') }}">
+                </div>
+
+                <div id="CheckedFilter" class="col-span-2 flex flex-wrap gap-0 w-fit content-center rounded-md drop-shadow-md">
+                    <data value="0"
+                        class="bg-gray-100 text-sm py-3 px-2 font-semibold text-gray-900 rounded-l-md hover:bg-gray-200 hover:text-gray-900"> Belum </data>
+                    <data value="1"
+                        class="bg-gray-100 text-sm py-3 px-2 font-semibold text-gray-500 rounded-r-md hover:bg-gray-200 hover:text-gray-900"> Sudah </data>
+                </div>
+
+                <div class="flex flex-wrap items-center py-2 px-3 bg-gray-100 rounded-md shadow-md gap-4 justify-items-end">
+                    <label for="data-showed" class="font-semibold text-gray-800"> Jumlah Data </label>
+                    <input type="number" name="" id="data-showed" class="inline-block border w-16 border-gray-400 rounded-sm outline-none focus:outline focus:outline-2 focus:outline-offset-1 focus:outline-gray-600">
+                </div>
             </div>
 
-            <div class="flex flex-wrap gap-0 w-fit content-center shadow-md">
-                <button
-                    class="bg-gray-100 text-sm p-2 font-semibold text-gray-700 rounded-l-md hover:bg-gray-200 hover:text-gray-900">Belum</button>
-                <button
-                    class="bg-gray-100 text-sm p-2 font-semibold text-gray-700 rounded-r-md hover:bg-gray-200 hover:text-gray-900">Sudah</button>
+
+
+            <div id="NameFilter" class="flex flex-col gap-2 bg-gray-100 w-full p-3 mt-12 rounded-md shadow-md  md:p-4 md:mt-0 ">
+                <label for="searchName" class="block min-w-9 font-semibold flex-grow  capitalize"> Cari Pasien </label>
+                <input type="search" name="searchName" id="searchName" class="block border border-gray-400 py-1 px-2 rounded-md outline-none focus:outline focus:outline-2 focus:outline-offset-1 focus:outline-gray-600">
             </div>
         </div>
     </section>

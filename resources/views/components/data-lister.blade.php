@@ -6,16 +6,10 @@
     - details
 --}}
 
-<section id="data-list" class="grid px-4 my-3 grid-cols-1 gap-3">
-    {{-- {{dd($datas)}} --}}
-    {{-- @foreach ($datas as $data )
-        @dd($data)
-    @endforeach --}}
+<section id="DataList" class="grid px-4 my-3 grid-cols-1 gap-3">
     @foreach ($datas as $data)
-    {{-- @dd($data) --}}
         @php
-            // temporary display solution
-            // when the check list data is available $checkList = $data["checkList"]
+
             $checkList = [
                 "Darah lengkap" => random_int(0,1) >= 0.5,
                 "Darah rutin" => random_int(0,1) >= 0.5,
@@ -24,22 +18,21 @@
             ];
 
             $detail = [
-                // 'Jenis Kelamin' => $data -> ,
-                'Nomor Rekam Medis' => $data -> norm,
-                'Nama' => $data->namapasien,
-                // 'Tanggal Keluar' => $data["outDate"],
+                'Nomor Rekam Medis' => $data->norm,
+                "Alamat" => $data->alamat,
+                "Tempat Lahir" => $data->tempat_lahir,
+                "Tanggal Lahir" => $data->tgl_lahir
             ];
 
             $validator = [];
-            foreach ($checkList as $lsit) {
-                $validator[count($validator)] = $lsit;
+            foreach ($checkList as $list) {
+                $validator[count($validator)] = $list;
             }
 
-            $checked = in_array(true, $validator)
-
+            $checked = in_array(true, $validator);
         @endphp
-        
-        <x-data :id="$data->id" :name="$detail['Nama']" :checked="$checked" :lists="$checkList" :details="$detail" />
+
+        <x-data :id="$data->id" :name="$data->namapasien" :checked="$checked" :lists="$checkList" :details="$detail" />
     @endforeach
 </section>
 

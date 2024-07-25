@@ -1,4 +1,12 @@
-<section class="data p-4 bg-gray-100 rounded-md shadow-md">
+<section id="data" class="p-4 bg-gray-100 rounded-md shadow-md">
+    <aside id="dataTrigger" class="hidden">
+        <data id="name" value="{{$name}}"></data>
+        <data id="checked" value="{{$checked ? 1 : 0}}"></data>
+        @foreach ( $details as $data )
+            <data value="{{$data}}"></data>
+        @endforeach
+    </aside>
+
     <div class="flex flex-wrap text-lg items-center font-semibold max-w-full">
         <span class="px-2">{{ $id }}</span>
         <span class="flex-grow justify-self-start max-w-36 line-clamp-1 md:max-w-none md:line-clamp-none">{{ $name }}</span>
@@ -32,7 +40,7 @@
 
                 <li class="col-span-1 order-1 border-b border-gray-400">
                     <div class="flex gap-2">
-                        <span class=" w-28">{{ $key }}</span>
+                        <span class="w-28 md:w-40">{{ $key }}</span>
                         <span class="text-gray-900 font-normal capitalize tracking-wide">{{ $data }}</span>
                     </div>
                 </li>
@@ -48,7 +56,7 @@
                 @foreach ($lists as $key => $value )
                 <li class="col-span-1 list-decimal border-b border-gray-300">
                     <div class="flex gap-2">
-                        <span class=" w-28">{{ $key }}</span>
+                        <span class="w-28">{{ $key }}</span>
                         <span class="font-normal capitalize">{{ $value ? "Ya" : "Tidak" }}</span>
                     </div>
                 </li>
@@ -63,11 +71,12 @@
                 </button>
             @endif
             @if ($checked)
-                <button class="bg-gray-800 text-gray-300 py-1 px-3 rounded-md font-medium tracking-wide">Edit</button>
+                <button class="bg-gray-800 text-gray-300 py-1 px-3 rounded-md font-semibold tracking-wide hover:bg-gray-700">Edit</button>
             @else
-                <button class="bg-gray-800 text-gray-300 py-1 px-3 rounded-md font-medium tracking-wide">Periksa</button>
+                <button class="bg-gray-800 text-gray-300 py-1 px-3 rounded-md font-semibold tracking-wide hover:bg-gray-700">Periksa</button>
             @endif
         </div>
+
 
 
     </div>

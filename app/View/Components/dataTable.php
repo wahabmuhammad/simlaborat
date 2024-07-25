@@ -12,7 +12,8 @@ class dataTable extends Component
      * Create a new component instance.
      */
     public function __construct(
-        public string $title = "Daftar Pasien"
+        public string $title = "Daftar Pasien",
+        public int $dataCount = 30,
     )
     {
         //
