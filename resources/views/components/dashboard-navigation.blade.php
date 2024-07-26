@@ -43,7 +43,7 @@
     </section>
 </nav>
 
-<nav class="hidden lg:flex flex-col fixed w-64 h-full pt-6 bg-gray-50">
+<nav class="hidden lg:flex flex-col fixed w-64 h-full pt-6 bg-gray-50 z-20">
     <div class="flex-grow">
         <h1 class="block w-full pl-8 text-2xl font-bold h-fit tracking-wide uppercase">Atlas Medika</h1>
         <div class="flex flex-col gap-3 pt-10 ml-8">
