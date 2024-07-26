@@ -50,18 +50,22 @@
 
         <div class="mt-3">
 
-            <h4>Daftar Pemeriksaan Dilakukan :</h4>
+            <h4>Pemeriksaan :</h4>
+            @if ($checked)
+                <ul class="grid grid-cols-1 pl-5 mt-2">
+                    @foreach ($lists as $key => $value )
+                    <li class="col-span-1 list-decimal border-b border-gray-300">
+                        <div class="flex gap-2">
+                            <span class="w-28">{{ $key }}</span>
+                            <span class="font-normal capitalize">{{ $value ? "Ya" : "Tidak" }}</span>
+                        </div>
+                    </li>
+                    @endforeach
+                </ul>
+            @else
+                <p class="border-b border-gray-400 inline-block font-medium w-full indent-2">Belum dilakukan pemeriksaan pada pasien <span class="font-semibold">{{$name}}</span></p>
+            @endif
 
-            <ul class="grid grid-cols-1 pl-5 mt-2">
-                @foreach ($lists as $key => $value )
-                <li class="col-span-1 list-decimal border-b border-gray-300">
-                    <div class="flex gap-2">
-                        <span class="w-28">{{ $key }}</span>
-                        <span class="font-normal capitalize">{{ $value ? "Ya" : "Tidak" }}</span>
-                    </div>
-                </li>
-                @endforeach
-            </ul>
 
         </div>
         <div class="flex flex-wrap mt-10 w-full place-content-end gap-3">

@@ -48,7 +48,7 @@ dataPerPageIndicator.addEventListener("change", function(Event){
     if(parseInt(dataPerPageIndicator.value) <= 0 || dataPerPageIndicator.value === "" || regex.test(dataPerPageIndicator.value)) dataPerPageIndicator.value = "1"
 
     dataPerPage = parseInt(dataPerPageIndicator.value)
-
+    
     if(!originalData) return
 
     filterByCheckedStatus(originalData, checkedStatus);
