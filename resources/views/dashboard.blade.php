@@ -35,7 +35,7 @@
                 </div>
             </div>
 
-            <x-data-table title="Daftar Pasien hari ini">
+            <x-data-table title="Daftar Pasien hari ini"  tableType="0">
                 <x-data-lister  :datas="$datas"/>
             </x-data-table>
         </x-dashboard-content>

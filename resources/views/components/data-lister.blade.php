@@ -24,6 +24,8 @@
                 "Tanggal Lahir" => $data->tgl_lahir
             ];
 
+            $note = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio amet hic pariatur tenetur, autem asperiores dolorem officia? Maiores error fuga modi odit animi autem distinctio, esse quo accusamus perferendis nam?";
+
             $validator = [];
             foreach ($checkList as $list) {
                 $validator[count($validator)] = $list;
@@ -32,7 +34,7 @@
             $checked = in_array(true, $validator);
         @endphp
 
-        <x-data :id="$data->id" :name="$data->namapasien" :checked="$checked" :lists="$checkList" :details="$detail" />
+        <x-data :id="$data->id" :name="$data->namapasien" :note="$note" :checked="$checked" :lists="$checkList" :details="$detail" :type="$tableType" />
     @endforeach
 </section>
 

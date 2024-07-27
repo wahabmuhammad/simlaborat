@@ -10,7 +10,10 @@ use Resources\lib\MockData;
 
 class dataLister extends Component
 {
-	public function __construct(public array $datas = [])
+	public function __construct(
+        public array $datas = [],
+        public string $tableType = "0", // Type 0: all, 1: pemeriksaan, 2: pembayaran, 3: preview
+    )
 	{
 		$this->datas = $datas;
 	}

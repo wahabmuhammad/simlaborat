@@ -2,24 +2,29 @@
     <aside id="dataTrigger" class="hidden">
         <data id="name" value="{{$name}}"></data>
         <data id="checked" value="{{$checked ? 1 : 0}}"></data>
-        @foreach ( $details as $data )
-            <data value="{{$data}}"></data>
-        @endforeach
+        <div id="details">
+            @foreach ( $details as $data )
+                <data value="{{$data}}"></data>
+            @endforeach
+        </div>
     </aside>
 
     <div class="flex flex-wrap text-lg items-center font-semibold max-w-full">
-        <span class="px-2">{{ $id }}</span>
+        <span class="px-2">•</span>
         <span class="flex-grow justify-self-start max-w-36 line-clamp-1 md:max-w-none md:line-clamp-none">{{ $name }}</span>
         <div class="flex flex-wrap content-center flex-grow justify-end md:flex-grow-0 gap-1">
-            @if ($checked)
-                <div class="flex px-2 min-w-14 text-sm rounded-md bg-green-300 justify-center items-center">
-                    <span class="inline-block text-center align-middle">Sudah</span>
-                </div>
-            @else
-                <div class="flex px-2 min-w-14 text-sm rounded-md bg-red-300 justify-center items-center">
-                    <span class="inline-block text-center align-middle">Belum</span>
-                </div>
+            @if ($type === "0" || $type === "1")
+                @if ($checked)
+                    <div class="flex px-2 min-w-14 text-sm rounded-md bg-green-300 justify-center items-center">
+                        <span class="inline-block text-center align-middle">Sudah</span>
+                    </div>
+                @else
+                    <div class="flex px-2 min-w-14 text-sm rounded-md bg-red-300 justify-center items-center">
+                        <span class="inline-block text-center align-middle">Belum</span>
+                    </div>
+                @endif
             @endif
+
             <button class="expandDetails p-1 rounded-md hover:bg-gray-200">
                 <img src="{{ URL::to('/') }}/images/dot.svg" alt="">
             </button>
@@ -49,35 +54,50 @@
         </ul>
 
         <div class="mt-3">
-
-            <h4>Pemeriksaan :</h4>
-            @if ($checked)
-                <ul class="grid grid-cols-1 pl-5 mt-2">
-                    @foreach ($lists as $key => $value )
-                    <li class="col-span-1 list-decimal border-b border-gray-300">
-                        <div class="flex gap-2">
-                            <span class="w-28">{{ $key }}</span>
-                            <span class="font-normal capitalize">{{ $value ? "Ya" : "Tidak" }}</span>
-                        </div>
-                    </li>
-                    @endforeach
-                </ul>
-            @else
-                <p class="border-b border-gray-400 inline-block font-medium w-full indent-2">Belum dilakukan pemeriksaan pada pasien <span class="font-semibold">{{$name}}</span></p>
+            <div>
+                <h4 class="font-medium">Catatan :</h4>
+                <p class="mt-2 p-3 bg-gray-300 rounded-md text-justify underline inline-block w-full indent-5">{{$note}}</p>
+            </div>
+            @if ($type === "0" || $type === "1")
+                <div class="mt-2">
+                    <h4 class="font-medium">Pemeriksaan :</h4>
+                    <div class="mt-2 bg-gray-300 px-3 py-4 rounded-md">
+                        @if ($checked)
+                            <ul class="grid grid-cols-1 pl-4">
+                                @foreach ($lists as $key => $value )
+                                <li class="col-span-1 list-decimal border-b border-gray-400">
+                                    <div class="flex gap-2">
+                                        <span class="w-28">{{ $key }}</span>
+                                        <span class="font-normal capitalize">{{ $value ? "Ya" : "Tidak" }}</span>
+                                    </div>
+                                </li>
+                                @endforeach
+                            </ul>
+                        @else
+                            <p class="underline inline-block w-full indent-2">Belum dilakukan pemeriksaan pada pasien
+                                <span class="font-medium ">
+                                    "{{$name}}"
+                                </span>
+                            </p>
+                        @endif
+                    </div>
+                </div>
             @endif
-
 
         </div>
+
         <div class="flex flex-wrap mt-10 w-full place-content-end gap-3">
-            @if ($checked)
-                <button class="bg-gray-300 text-gray-800 p-1 rounded-md font-medium tracking-wide">
-                    <img src="{{ URL::to('/') }}/images/print.svg" alt="Cetak">
-                </button>
-            @endif
-            @if ($checked)
-                <button class="bg-gray-800 text-gray-300 py-1 px-3 rounded-md font-semibold tracking-wide hover:bg-gray-700">Edit</button>
-            @else
-                <button class="bg-gray-800 text-gray-300 py-1 px-3 rounded-md font-semibold tracking-wide hover:bg-gray-700">Periksa</button>
+            @if ($type === "0" || $type === "1")
+                @if ($checked)
+                    <button class="bg-gray-300 text-gray-800 p-1 rounded-md font-medium tracking-wide">
+                        <img src="{{ URL::to('/') }}/images/print.svg" alt="Cetak">
+                    </button>
+                @endif
+                @if ($checked)
+                    <button class="bg-gray-800 text-gray-300 py-1 px-3 rounded-md font-semibold tracking-wide hover:bg-gray-700">Edit</button>
+                @else
+                    <button class="bg-gray-800 text-gray-300 py-1 px-3 rounded-md font-semibold tracking-wide hover:bg-gray-700">Periksa</button>
+                @endif
             @endif
         </div>
 

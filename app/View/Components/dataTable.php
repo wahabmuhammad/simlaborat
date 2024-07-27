@@ -14,6 +14,7 @@ class dataTable extends Component
     public function __construct(
         public string $title = "Daftar Pasien",
         public int $dataCount = 30,
+        public string $tableType = "0"
     )
     {
         //

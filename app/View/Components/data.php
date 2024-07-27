@@ -24,7 +24,9 @@ class data extends Component
     public function __construct(
         public int $id = 1,
         public string $name = "John Doe",
+        public string $note = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio amet hic pariatur tenetur, autem asperiores dolorem officia? Maiores error fuga modi odit animi autem distinctio, esse quo accusamus perferendis nam?",
         public bool $checked = false,
+        public string $type = "0", // Type 0: all, 1: pemeriksaan, 2: pembayaran
         public array $lists = [
             "Darah lengkap" => true,
             "Darah rutin" => true,
